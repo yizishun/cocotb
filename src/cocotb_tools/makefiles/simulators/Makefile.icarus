@@ -71,6 +71,7 @@ endif
 # Compilation phase
 
 ifeq ($(WAVES), 1)
+	VERILOG_SOURCES := $(filter-out $(SIM_BUILD)/cocotb_iverilog_dump.v, $(VERILOG_SOURCES))
     VERILOG_SOURCES += $(SIM_BUILD)/cocotb_iverilog_dump.v
     COMPILE_ARGS += -s cocotb_iverilog_dump
     FST = -fst
